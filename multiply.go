@@ -20,5 +20,5 @@ func mult() {
 
 	var total float64 = one * two
 
-	println(total)
+	println("Your number is:", total)
 }
