@@ -15,6 +15,9 @@ func runthego() {
 		mult()
 	case "2":
 		addition()
+
+	case "3":
+		subtract()
 	default:
 		return
 	}
