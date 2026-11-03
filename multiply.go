@@ -18,7 +18,7 @@ func clearScreen() {
 	cmd.Run()
 }
 
-func main() {
+func mult() {
 	var one float64
 	var two float64
 

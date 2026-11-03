@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
 	"runtime"
@@ -21,4 +22,12 @@ func clearScreen() {
 
 func runthego() {
 	cmd := exec.Cmd("go", "run", filename)
+}
+
+func main() {
+
+	fmt.Println("What option do you want to do today?")
+	fmt.Println("1: Multiply")
+	fmt.Scan(&filename)
+
 }
