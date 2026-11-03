@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func mult() {
@@ -21,4 +22,5 @@ func mult() {
 	var total float64 = one * two
 
 	println("Your number is:", total)
+	time.Sleep(3000)
 }

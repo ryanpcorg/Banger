@@ -13,6 +13,8 @@ func runthego() {
 	switch choice {
 	case "1":
 		mult()
+	case "2":
+		addition()
 	default:
 		return
 	}
@@ -30,6 +32,10 @@ func main() {
 
 	fmt.Println("What option do you want to do today?")
 	fmt.Println("1: Multiply")
+	fmt.Println("2: Addition")
+	fmt.Println("3: Subtraction")
+	fmt.Println("4: Division")
 	fmt.Scan(&choice)
+	clearScreen()
 	runthego()
 }
