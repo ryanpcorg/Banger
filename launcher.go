@@ -22,6 +22,7 @@ func clearScreen() {
 
 func runthego() {
 	cmd := exec.Cmd("go", "run", filename)
+	cmd.Execute
 }
 
 func main() {
