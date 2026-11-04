@@ -1,46 +1,42 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
-	"os/exec"
+	"strings"
 )
 
-var choice string
-
-func runthego() {
-	var target string
-	switch choice {
-	case "1":
-		mult()
-	case "2":
-		addition()
-
-	case "3":
-		subtract()
-	case "4":
-		division()
-	default:
-		return
-	}
-	cmd := exec.Command("go", "run", target)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	cmd.Stdin = os.Stdin
-	err := cmd.Run()
-	if err != nil {
-		fmt.Println("Error running file:", err)
-	}
-}
-
 func main() {
+	scanner := bufio.NewScanner(os.Stdin)
 
-	fmt.Println("What option do you want to do today?")
-	fmt.Println("1: Multiply")
-	fmt.Println("2: Addition")
-	fmt.Println("3: Subtraction")
-	fmt.Println("4: Division")
-	fmt.Scan(&choice)
-	clearScreen()
-	runthego()
+	println("██████╗  █████╗ ███╗   ██╗ ██████╗ ███████╗██████╗ ")
+	println("██╔══██╗██╔══██╗████╗  ██║██╔════╝ ██╔════╝██╔══██╗")
+	println("██████╔╝███████║██╔██╗ ██║██║  ███╗█████╗  ██████╔╝")
+	println("██╔══██╗██╔══██║██║╚██╗██║██║   ██║██╔══╝  ██╔══██╗")
+	println("██████╔╝██║  ██║██║ ╚████║╚██████╔╝███████╗██║  ██║")
+	println("╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝")
+	println("---------------------------------------------------")
+	println("The calculator your mum hates and you dad thinks is BS")
+
+	for {
+		fmt.Print("Calculate > ")
+		if !scanner.Scan() {
+			break
+		}
+
+		input := strings.TrimSpace(scanner.Text())
+
+		if input == "exit" {
+			break
+		}
+
+		if input == "" {
+			continue
+		}
+
+		result := EvaluateExpression(input)
+
+		fmt.Printf("Result    = %v\n\n", result)
+	}
 }
