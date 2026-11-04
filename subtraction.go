@@ -18,5 +18,4 @@ func subtract() {
 
 	var total float64 = one - two
 	fmt.Print(total)
-
 }

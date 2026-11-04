@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func addition() {
@@ -19,6 +18,5 @@ func addition() {
 
 	var total float64 = one + two
 	fmt.Print("Your number is:", total)
-	time.Sleep(3000)
-	clearScreen()
+
 }

@@ -18,6 +18,8 @@ func runthego() {
 
 	case "3":
 		subtract()
+	case "4":
+		division()
 	default:
 		return
 	}
